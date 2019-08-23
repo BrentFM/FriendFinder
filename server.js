@@ -1,7 +1,8 @@
-var mysql = require('mysql');
+var path = require("path");
 var express = require("express");
 var app = express();
 var PORT = process.env.PORT || 9000;
+
 
 app.use(express.urlencoded());
 app.use(express.json());
@@ -9,8 +10,10 @@ app.use(express.json());
 require("./routing/htmlRoutes")(app);
 var users = require("./app/data/friends");
 
+// -- CSS -- //
+app.use(express.static(path.join(__dirname, "public"))); 
 
-// API
+// -- API -- //
 app.get("/api/friends", function (req, res) {
     res.json(users);
 
@@ -24,7 +27,6 @@ app.get("/api/friends", function (req, res) {
 app.post("/api/friends", function (req, res) {
     users.push(req.body);
 })
-
 
 
 

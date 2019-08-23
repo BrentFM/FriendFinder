@@ -14,16 +14,17 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-
+        <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 
-<div class="container">
+<div class="container shadow p-3 mb-5 bg-white rounded border text-center surveybox">
     <div id="header">
         <h1>Survey Questions</h1>
+        <hr>
     </div>
     <form method="POST">
-        <div class="container">
+        <div class="container surveybox">
             <div class="row">
                 <div class="col-12">
                     <label name="name">What's your name?</label>
@@ -85,12 +86,14 @@
                     <option value="5">5 - Strongly Agree</option>
                 </select>
             </div>
-            <button type="button" class="surveybtn">Submit</button>
-
+            <br>
+            <button type="button" class="surveybtn btn btn-dark submitbtn">Submit</button> <a href="api/friends" target="_blank" role="button" class="userbtn btn btn-primary">Users</a>
             <script>
+                $(".userbtn").hide();
                 var arr = []
                 $(".surveybtn").click(function () {
                     event.preventDefault();
+                    $(".userbtn").show();
 
                     var arr = [];
                     var username = (document.getElementById("name").value);
