@@ -11,7 +11,7 @@ var users = require("./app/data/friends");
 
 
 // API
-app.get("/api/friends", function(req, res) {
+app.get("/api/friends", function (req, res) {
     res.json(users);
 
     for (i = 0; i < users.length; i++) {
@@ -21,18 +21,18 @@ app.get("/api/friends", function(req, res) {
     }
 })
 
- app.post("/api/friends", function(req, res) {
-          users.push(req.body);
-    })
+app.post("/api/friends", function (req, res) {
+    users.push(req.body);
+})
 
 
 
 
 
 
-app.listen(PORT, function() {
+app.listen(PORT, function () {
     console.log("App listening on PORT: " + PORT);
-  });
+});
 
 
-  module.exports = users;
+module.exports = users;
