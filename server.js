@@ -6,14 +6,6 @@ var PORT = process.env.PORT || 9000;
 app.use(express.urlencoded());
 app.use(express.json());
 
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "root",
-  database: "FriendFinder"
-});
-  module.exports = con;
-
 require("./routing/htmlRoutes")(app);
 var users = require("./app/data/friends");
 
