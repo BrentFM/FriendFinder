@@ -88,12 +88,15 @@
             </div>
             <br>
             <button type="button" class="surveybtn btn btn-dark submitbtn">Submit</button> <a href="api/friends" target="_blank" role="button" class="userbtn btn btn-primary">Users</a>
-            <script>
+           <p class="accCreated">Account Created!</p>
+           <script>
                 $(".userbtn").hide();
+                $(".accCreated").hide();
                 var arr = []
                 $(".surveybtn").click(function () {
                     event.preventDefault();
                     $(".userbtn").show();
+                    $(".accCreated").show();
 
                     var arr = [];
                     var username = (document.getElementById("name").value);

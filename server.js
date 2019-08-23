@@ -28,6 +28,10 @@ app.post("/api/friends", function (req, res) {
     users.push(req.body);
 })
 
+app.get("*", function (req, res) {
+    res.redirect("/survey")
+    })
+
 
 
 
